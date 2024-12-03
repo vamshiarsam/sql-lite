@@ -1,14 +1,13 @@
-'use client'
+"use client"; // This is a client component
+
 import { useEffect, useState } from 'react';
 
-export default function Home() {
+export default function Users() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const response = await fetch('/fetchData'); // Create this API route to fetch users
-     
-     console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa",response)
+      const response = await fetch('src/app/api/users');
       const data = await response.json();
       setUsers(data);
     };
